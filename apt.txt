@@ -1,0 +1,12 @@
+# Some linux packages for basic terminal work, particularly
+# oriented at users new to Unix/cmd line environments.
+
+# GUI text editors
+vim-gtk3
+gedit
+
+# Git clients and tools
+git-gui
+gitg
+qgit
+meld
