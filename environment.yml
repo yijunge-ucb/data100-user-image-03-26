@@ -48,14 +48,13 @@ dependencies:
 
   # pip installed pacakges, conda preferred
   - pip:
-    # required for basic functionality
-    - git+https://github.com/shaneknapp/python-popularity-contest.git@add-error-handling
-   
+      # required for basic functionality
+      - git+https://github.com/shaneknapp/python-popularity-contest.git@add-error-handling
 
-    # disable until fixed (probably this:  https://github.com/jupyterlab/jupyter-collaboration/issues/162)
-    # DH-418, 2024-01-16, above issue still not fixed.  Also this package is available in condaforge
-    # https://anaconda.org/conda-forge/jupyter-collaboration
-    # - jupyter_collaboration==1.0.1
-
-    # https://github.com/berkeley-dsep-infra/datahub/issues/7611
-    - otter-pensieve==1.6.0
+      # disable until fixed (probably this:  https://github.com/jupyterlab/jupyter-collaboration/issues/162)
+      # DH-418, 2024-01-16, above issue still not fixed.  Also this package is available in condaforge
+      # https://anaconda.org/conda-forge/jupyter-collaboration
+      # - jupyter_collaboration==1.0.1
+  
+      # https://github.com/berkeley-dsep-infra/datahub/issues/7611
+      - otter-pensieve==1.6.0
