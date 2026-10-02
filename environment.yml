@@ -5,41 +5,54 @@ channels:
   - pytorch
 
 dependencies:
-  # Items required for basic level functionality
-  - git-lfs==3.7.0
+  # Pin python so the solver doesn't evaluate every Python release
+  - python=3.11
 
-  # other packages
-  - duckdb==1.3.0
+  # Basic functionality
+  - git-lfs==3.7.1
+
+  # Packages
+  - altair==6.2.2
+  - duckdb==1.3.2
   - duckdb-engine==0.15.0
   - folium==0.19.7
+  - hvplot==0.12.2
   - ipykernel==6.31.0
   - jupysql==0.11.1
-  - libclang==18.1.1
+  - libclang==18.1.8
   - mdit-py-plugins==0.4.2
   - ml_dtypes==0.4.0
   - mlxtend==0.23.4
+  - polars==1.43.2
   - protobuf==5.27.5
   - pytest-notebook==0.10.0
-  - requests==2.32.4
-  - scikit-image==0.25.0
-  - sqlalchemy==2.0.41
+  - requests==2.32.5
+  - scikit-image==0.25.2
+  - sqlalchemy==2.0.49
   - tensorboard==2.17.1
   - tensorflow-cpu==2.17.0
   - tf-keras==2.17.0
+  
   # Spring 2024 data 100
   - cpuonly==2.0
   - pytorch==2.5.1
   - transformers==4.52.4
+
   # Spring 2024 table demos
   - lxml==5.4.0
+
   # Spring 2024 Econ 148 Packages
-  - geopandas==1.1.0
+  - geopandas==1.1.4
   - geopy==2.4.1
   # Fix the nodejs version to be compatible with the base image vscode installation.
   - nodejs=22.22.*
 
-  # pip installed pacakges, conda preferred
+  # Pip dependencies
+  - pip
   - pip:
+      # DH-747, mamba resolver hangs if pyarrow is specified above
+      - pyarrow==25.0.0
+
       # required for basic functionality
       - git+https://github.com/shaneknapp/python-popularity-contest.git@add-error-handling
 
@@ -50,3 +63,6 @@ dependencies:
 
       # https://github.com/berkeley-dsep-infra/datahub/issues/7611
       - otter-pensieve==1.6.0
+
+      # https://github.com/berkeley-dsep-infra/datahub/issues/8309
+      - jupyterlab-a11y-checker==0.2.8
